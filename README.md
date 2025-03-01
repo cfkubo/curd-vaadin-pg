@@ -8,8 +8,8 @@ https://cfkubo.github.io/curd-vaadin-pg/
 2. [Features](#features)
 3. [Getting Started](#getting-started)
 4. [Configuration](#configuration)
-5. [Running the Application](#running-the-application)
-6. [Troubleshooting](#troubleshooting)
+5. [Setup Postgres on local](#Run-postgres-in-docker)
+6. [Build and Run](#Build-and-Run)
 
 ## Introduction
 
@@ -34,7 +34,7 @@ To get started with this project, you need to have the following prerequisites i
 Before running the application, ensure that your `application.properties` file is correctly configured. The default configuration assumes a local PostgreSQL database with the following settings:
 
 
-### Run postgres in docker
+### Run-postgres-in-docker
 ```
 docker run --name my-postgres -e POSTGRES_PASSWORD=password -d postgres
 ```
@@ -69,7 +69,7 @@ postgres=# exit
 
 
 
-### Build and Run
+### Build-and-Run
 ```
 mvn clean install
 mvn spring-boot:run
