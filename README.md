@@ -55,7 +55,12 @@ brew --prefix openjdk@17
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 ```
 
-### Image creation
+### Managing docker with colima
+```
+colima start --cpu 8 --memory 12
+```
+
+### Image creation (WIP - testing needed)
 
 > check for dependency conflicts
 ```
@@ -71,11 +76,16 @@ mvn dependency:tree
 ```
 ./mvnw clean package spring-boot:build-image -Pnative -DskipTests -X
 ```
+> Build image with multple threads (if the above fails)
+```
+mvn clean package -Pnative spring-boot:build-image -T 8C -DskipTests 
+```
+
 
 > Then, you can run the app like any other container:
 
 ```
-docker run --rm -p 8080:8080 spdemo:0.0.1-SNAPSHOT
+docker run --rm -p 8080:8080 docker.io/library/crud-with-vaadin-initial:0.0.1-SNAPSHOT
 ```
 ### Executable with Native Build Tools
 > Use this option if you want to explore more options such as running your tests in a native image. The GraalVM native-image compiler should be installed and configured on your machine.
