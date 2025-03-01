@@ -57,10 +57,21 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 
 ### Image creation
 
-> To create the image, run the following goal:
+> check for dependency conflicts
+```
+mvn dependency:tree
+```
+
+> To create the image, run the following goal: (-X for debug ouput)
 ```
 ./mvnw spring-boot:build-image -Pnative -DskipTests -X
 ```
+
+> Clean image build (-X for debug ouput)
+```
+./mvnw clean package spring-boot:build-image -Pnative -DskipTests -X
+```
+
 > Then, you can run the app like any other container:
 
 ```
