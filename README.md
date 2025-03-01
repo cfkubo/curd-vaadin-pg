@@ -55,26 +55,34 @@ brew --prefix openjdk@17
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 ```
 
-To create the image, run the following goal:
+### Image creation
+
+> To create the image, run the following goal:
 ```
 ./mvnw spring-boot:build-image -Pnative -DskipTests
 ```
-Then, you can run the app like any other container:
+> Then, you can run the app like any other container:
 
-$ docker run --rm -p 8080:8080 spdemo:0.0.1-SNAPSHOT
-Executable with Native Build Tools
-Use this option if you want to explore more options such as running your tests in a native image. The GraalVM native-image compiler should be installed and configured on your machine.
+```
+docker run --rm -p 8080:8080 spdemo:0.0.1-SNAPSHOT
 
-NOTE: GraalVM 22.3+ is required.
+### Executable with Native Build Tools
+> Use this option if you want to explore more options such as running your tests in a native image. The GraalVM native-image compiler should be installed and configured on your machine.
 
-To create the executable, run the following goal:
+> NOTE: GraalVM 22.3+ is required.
 
-$ ./mvnw native:compile -Pnative
-Then, you can run the app as follows:
+> To create the executable, run the following goal:
+```
+./mvnw native:compile -Pnative
+```
+> Then, you can run the app as follows:
+```
+target/spdemo
+```
+> You can also run your existing tests suite in a native image. This is an efficient way to validate the compatibility of your application.
 
-$ target/spdemo
-You can also run your existing tests suite in a native image. This is an efficient way to validate the compatibility of your application.
+> To run your existing tests in a native image, run the following goal:
 
-To run your existing tests in a native image, run the following goal:
-
-$ ./mvnw test -PnativeTest
+```
+./mvnw test -PnativeTest
+```
