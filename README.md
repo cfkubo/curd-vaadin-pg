@@ -37,7 +37,7 @@ Before running the application, ensure that your `application.properties` file i
 docker run --name my-postgres -e POSTGRES_PASSWORD=password -d postgres
 ```
 
-### create an admin user to be able login remotely or create restricted user with login
+### Create an admin user to be able login remotely or create restricted user with login
 ```
 CREATE ROLE admin WITH LOGIN PASSWORD 'password';
 ALTER ROLE admin WITH SUPERUSER;
@@ -59,13 +59,13 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 
 > To create the image, run the following goal:
 ```
-./mvnw spring-boot:build-image -Pnative -DskipTests
+./mvnw spring-boot:build-image -Pnative -DskipTests -X
 ```
 > Then, you can run the app like any other container:
 
 ```
 docker run --rm -p 8080:8080 spdemo:0.0.1-SNAPSHOT
-
+```
 ### Executable with Native Build Tools
 > Use this option if you want to explore more options such as running your tests in a native image. The GraalVM native-image compiler should be installed and configured on your machine.
 
