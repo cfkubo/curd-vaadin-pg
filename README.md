@@ -1,6 +1,6 @@
 # curd-vaadin-pg
 
-#### Sample demo project that implements CURD funcationality with Spring Boot, Vaadin and PostgreSQL. 
+#### Sample demo project that implements CURD funcationality with Spring Boot, Vaadin and PostgreSQL.
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Features](#features)
@@ -43,6 +43,30 @@ CREATE ROLE admin WITH LOGIN PASSWORD 'password';
 ALTER ROLE admin WITH SUPERUSER;
 ```
 
+> Conect to postgres using psql or docker exec
+
+```
+psql -d postgres -h localhost -p 5432
+```
+
+```
+docker exec -it c66013bcd55b  psql -U postgres
+```
+
+```
+postgres=#
+
+postgres=# CREATE ROLE admin WITH LOGIN PASSWORD 'password';
+
+-- Grant superuser privileges (full admin access)
+ALTER ROLE admin WITH SUPERUSER;
+CREATE ROLE
+ALTER ROLE
+postgres=# exit
+```
+
+
+
 ### Build and Run
 ```
 mvn clean install
@@ -51,7 +75,7 @@ mvn spring-boot:run
 
 ### Setup JAVA_HOME
 ```
-brew --prefix openjdk@17 
+brew --prefix openjdk@17
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 ```
 
@@ -78,7 +102,7 @@ mvn dependency:tree
 ```
 > Build image with multple threads (if the above fails)
 ```
-mvn clean package -Pnative spring-boot:build-image -T 8C -DskipTests 
+mvn clean package -Pnative spring-boot:build-image -T 8C -DskipTests
 ```
 
 
