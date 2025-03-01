@@ -60,7 +60,7 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 colima start --cpu 8 --memory 12
 ```
 
-### Image creation (WIP - testing needed)
+### Image creation (WIP - TESTING NEEDED)
 
 > check for dependency conflicts
 ```
