@@ -36,7 +36,7 @@ Before running the application, ensure that your `application.properties` file i
 
 ### Run-postgres-in-docker
 ```
-docker run --name my-postgres -e POSTGRES_PASSWORD=password -d postgres
+docker run --name my-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
 ```
 
 ### Create an admin user to be able login remotely or create restricted user with login
