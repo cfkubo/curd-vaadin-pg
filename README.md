@@ -21,6 +21,9 @@ This project is a simple CRUD application that demonstrates how to implement bas
 - **Vaadin**: Uses Vaadin for building a responsive web UI.
 - **PostgreSQL**: Employs PostgreSQL as the database.
 
+![Alt text](static/vaadin.png)
+
+
 ## Getting Started
 
 To get started with this project, you need to have the following prerequisites installed on your system:
@@ -66,8 +69,6 @@ CREATE ROLE
 ALTER ROLE
 postgres=# exit
 ```
-
-
 
 ### Build-and-Run
 ```
