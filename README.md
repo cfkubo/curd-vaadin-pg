@@ -72,6 +72,8 @@ postgres=# exit
 ### Build-and-Run
 ```
 mvn clean install
+mvn clean build
+mvn clean package
 mvn spring-boot:run
 ```
 
